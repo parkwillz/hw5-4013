@@ -10,13 +10,7 @@
         function greet() {
             alert("Hello, World!");
         }
-
-        <button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
+        function myFunction() {
   var txt;
   if (confirm("Press a button!")) {
     txt = "You pressed OK!";
@@ -25,10 +19,12 @@ function myFunction() {
   }
   document.getElementById("demo").innerHTML = txt;
 }
-       
     </script>
 </head>
 <body>
     <button onclick="greet()">Click me</button>
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
 </body>
 </html>
