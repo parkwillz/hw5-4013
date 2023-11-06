@@ -20,6 +20,14 @@
       document.getElementById("demo").innerHTML = txt;
         }
 
+        const myObject = {
+      firstName:"Parker",
+      lastName: "Williams",
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+  }
+}
+document.getElementById("demo").innerHTML = myObject.fullName();
  
     </script>
 </head>
