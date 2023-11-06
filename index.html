@@ -19,6 +19,50 @@
   }
   document.getElementById("demo").innerHTML = txt;
 }
+
+        function generateRandomPassword(length, options) {
+  const defaults = {
+    uppercase: true,
+    lowercase: true,
+    numbers: true,
+    symbols: true,
+    excludeSimilarCharacters: false,
+    excludeAmbiguousCharacters: false,
+  };
+
+  options = { ...defaults, ...options };
+
+  const charset = {
+    uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lowercase: 'abcdefghijklmnopqrstuvwxyz',
+    numbers: '0123456789',
+    symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?',
+  };
+
+  let characters = '';
+  for (const key in charset) {
+    if (options[key]) {
+      characters += charset[key];
+    }
+  }
+
+  if (options.excludeSimilarCharacters) {
+    characters = characters.replace(/iIlLoO01/g, '');
+  }
+
+  if (options.excludeAmbiguousCharacters) {
+    characters = characters.replace(/{}[]()<>|/g, '');
+  }
+
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters.charAt(randomIndex);
+  }
+
+  return password;
+}
+
     </script>
 </head>
 <body>
@@ -26,5 +70,8 @@
     <button onclick="myFunction()">Try it</button>
 
     <p id="demo"></p>
+
+    const password = generateRandomPassword(12, { uppercase: true, lowercase: true, numbers: true, symbols: true });
+    console.log(password);
 </body>
 </html>
