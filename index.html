@@ -27,22 +27,23 @@
     <button onclick="myFunction()">Try it</button>
 
     <p id="demo"></p>
-    <p id="demo2"></p>
-    <script>
+   
 
-        const myObject = {
+    <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.</button>
+
+    <p id="demo"></p>
+    <script>
+const myObject = {
   firstName:"John",
   lastName: "Doe",
   fullName: function() {
     return this.firstName + " " + this.lastName;
   }
 }
-document.getElementById("demo2").innerHTML = myObject.fullName();
-    </script>
-
-    <button type="button"
-    onclick="document.getElementById('demo').innerHTML = Date()">
-    Click me to display Date and Time.</button>
+document.getElementById("demo").innerHTML = myObject.fullName();
+</script>
   
 </body>
 </html>
