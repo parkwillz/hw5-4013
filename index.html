@@ -20,15 +20,6 @@
       document.getElementById("demo").innerHTML = txt;
         }
 
-        const myObject = {
-      firstName:"Parker",
-      lastName: "Williams",
-      fullName: function() {
-        return this.firstName + " " + this.lastName;
-  }
-}
-document.getElementById("demo2").innerHTML = myObject.fullName();
- 
     </script>
 </head>
 <body>
@@ -37,6 +28,17 @@ document.getElementById("demo2").innerHTML = myObject.fullName();
 
     <p id="demo"></p>
     <p id="demo2"></p>
+    <script>
+
+        const myObject = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+document.getElementById("demo2").innerHTML = myObject.fullName();
+    </script>
 
     <button type="button"
     onclick="document.getElementById('demo').innerHTML = Date()">
